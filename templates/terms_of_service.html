@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block title %}Terms of Service - VLabel{% endblock %}
+
+{% block content %}
+<div class="terms-page">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0" style="border-radius: 20px;">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-5">
+                            <img src="{{ url_for('static', filename='images/vlabel_logo.png') }}" alt="VLabel" style="height: 55px; margin-bottom: 20px;">
+                            <h1 class="h2 mb-2" style="color: #4A9AA1; font-weight: 600;">Terms of Service</h1>
+                            <p class="text-muted">Last updated: July 24, 2025</p>
+                        </div>
+
+                        <div class="terms-content">
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-handshake me-2"></i>Agreement to Terms
+                                </h3>
+                            <p>By accessing and using VLabel ("Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-cogs me-2"></i>Service Description & Technical Scope
+                                </h3>
+                            <p>VLabel is a specialized web-based application that:</p>
+                            <ul>
+                                <li><strong>Automated Label Extraction:</strong> Searches Gmail for Vinted emails with PDF attachments</li>
+                                <li><strong>Secure Processing:</strong> Uses read-only Gmail access to extract shipping labels</li>
+                                <li><strong>Format Optimization:</strong> Crops, rotates, and optimizes labels for thermal printing</li>
+                                <li><strong>Multi-Carrier Support:</strong> Handles labels from DHL, InPost, Poste Italiane, and UPS</li>
+                                <li><strong>Bulk Operations:</strong> Processes multiple labels efficiently in single sessions</li>
+                                <li><strong>Privacy-First Design:</strong> Temporary processing only, no permanent data storage</li>
+                            </ul>
+                            
+                            <h5 class="h6 mt-3 mb-2">Legitimate Business Purpose:</h5>
+                            <p>VLabel solves the time-intensive manual process that requires Vinted sellers to individually search Gmail, download PDF attachments, manually crop labels, and organize files - automating this workflow while maintaining complete email privacy and security.</p>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-user-shield me-2"></i>User Responsibilities
+                                </h3>
+                            <h4 class="h5">Account Security</h4>
+                            <ul>
+                                <li><strong>Credentials:</strong> Keep your Gmail authentication credentials secure</li>
+                                <li><strong>Access Control:</strong> Do not share your VLabel access with unauthorized parties</li>
+                                <li><strong>App Passwords:</strong> Use secure, temporary Gmail app passwords as recommended</li>
+                            </ul>
+                            
+                            <h4 class="h5">Proper Usage</h4>
+                            <ul>
+                                <li><strong>Legitimate Use:</strong> Use VLabel only for processing your own Vinted shipping labels</li>
+                                <li><strong>Legal Compliance:</strong> Ensure your use complies with local laws and regulations</li>
+                                <li><strong>No Abuse:</strong> Do not attempt to exploit, hack, or misuse the service</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-server me-2"></i>Service Availability
+                                </h3>
+                            <ul>
+                                <li><strong>Uptime:</strong> We strive for maximum service availability but cannot guarantee 100% uptime</li>
+                                <li><strong>Maintenance:</strong> Scheduled maintenance may temporarily interrupt service</li>
+                                <li><strong>Third-Party Dependencies:</strong> Service functionality depends on Gmail API availability</li>
+                                <li><strong>No Warranty:</strong> Service is provided "as is" without warranty of any kind</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-shield-alt me-2"></i>Data and Privacy Commitments
+                                </h3>
+                            <h5 class="h6 mt-3 mb-2">Technical Security Measures:</h5>
+                            <ul>
+                                <li><strong>Read-Only Gmail Access:</strong> VLabel cannot modify, delete, or send emails</li>
+                                <li><strong>Filtered Email Access:</strong> Processes only emails from official Vinted domains</li>
+                                <li><strong>PDF-Only Processing:</strong> Extracts only PDF attachments, ignores email text content</li>
+                                <li><strong>Temporary Processing:</strong> Email content processed in memory only, never stored</li>
+                                <li><strong>Automatic Cleanup:</strong> All temporary files deleted immediately after processing</li>
+                            </ul>
+                            
+                            <h5 class="h6 mt-3 mb-2">User Rights:</h5>
+                            <ul>
+                                <li><strong>Full Control:</strong> Revoke Gmail access permissions at any time</li>
+                                <li><strong>Transparency:</strong> Complete visibility into data processing activities</li>
+                                <li><strong>Privacy Policy:</strong> Comprehensive data protection policies available</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-copyright me-2"></i>Intellectual Property
+                                </h3>
+                            <ul>
+                                <li><strong>Service Ownership:</strong> VLabel and its technology remain our intellectual property</li>
+                                <li><strong>User Content:</strong> You retain rights to your shipping labels and email content</li>
+                                <li><strong>Processing Rights:</strong> You grant us permission to process your labels for service delivery</li>
+                                <li><strong>Third-Party Content:</strong> Respect intellectual property rights of shipping carriers</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-exclamation-triangle me-2"></i>Limitation of Liability
+                                </h3>
+                            <ul>
+                                <li><strong>Service Interruption:</strong> We are not liable for temporary service unavailability</li>
+                                <li><strong>Data Loss:</strong> Users are responsible for backing up important shipping information</li>
+                                <li><strong>Processing Errors:</strong> We strive for accuracy but cannot guarantee perfect label processing</li>
+                                <li><strong>Maximum Liability:</strong> Our liability is limited to the amount paid for service access</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-credit-card me-2"></i>Payment and Refunds
+                                </h3>
+                            <ul>
+                                <li><strong>Access Fees:</strong> Service access is provided through authorized payment methods</li>
+                                <li><strong>Payment Processing:</strong> Payments are handled securely through third-party processors</li>
+                                <li><strong>Refund Policy:</strong> Refunds may be considered on a case-by-case basis</li>
+                                <li><strong>Service Changes:</strong> We reserve the right to modify pricing with reasonable notice</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-times-circle me-2"></i>Termination
+                                </h3>
+                            <ul>
+                                <li><strong>User Termination:</strong> You may discontinue service use at any time</li>
+                                <li><strong>Service Termination:</strong> We may terminate access for violations of these terms</li>
+                                <li><strong>Data Handling:</strong> Upon termination, we will handle your data according to our Privacy Policy</li>
+                                <li><strong>Survival:</strong> Certain provisions survive termination including intellectual property rights</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-sync-alt me-2"></i>Updates to Terms
+                                </h3>
+                            <p>We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting. Your continued use of VLabel after changes constitutes acceptance of the modified terms.</p>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-gavel me-2"></i>Governing Law
+                                </h3>
+                            <p>These Terms of Service are governed by applicable international laws for digital services. Any disputes will be resolved through appropriate legal channels.</p>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-envelope me-2"></i>Contact Information
+                                </h3>
+                            <p>For questions about these Terms of Service:</p>
+                            <ul>
+                                <li><strong>Email:</strong> legal@vlabel.app</li>
+                                <li><strong>Response Time:</strong> Within 48 hours</li>
+                                <li><strong>Legal Department:</strong> Available for formal inquiries</li>
+                            </ul>
+                        </section>
+                    </div>
+
+                        <div class="text-center mt-5">
+                            <a href="{{ url_for('index') }}" class="btn btn-lg" style="background-color: #4A9AA1; border-color: #4A9AA1; color: white; border-radius: 25px; padding: 12px 30px; font-weight: 500;">
+                                <i class="fas fa-arrow-left me-2"></i>Back to VLabel
+                            </a>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

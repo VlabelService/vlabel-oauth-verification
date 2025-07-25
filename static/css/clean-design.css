@@ -1,0 +1,339 @@
+/* VLABEL - DESIGN PULITO DA ZERO */
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #4A9AA1;
+  --primary-light: #5CB3BA;
+  --primary-dark: #357a7f;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --border-light: rgba(74, 154, 161, 0.1);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.15);
+  --radius: 20px;
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Background Hero */
+.hero-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  z-index: -1;
+}
+
+/* Container principale */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* CARD PRINCIPALI - Design massiccio */
+.login-card,
+.main-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  margin: 2rem 0;
+}
+
+.login-card:hover,
+.main-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-5px);
+}
+
+/* HEADER SENZA BORDI - Completamente piatto */
+.card-header {
+  background: var(--light-gray);
+  padding: 3rem 2rem;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Solo per dashboard - header completamente piatto */
+.dashboard-page .card-header {
+  border-radius: 0;
+  margin: 0;
+  padding: 3rem 2rem;
+}
+
+/* Body delle card */
+.card-body {
+  padding: 3rem 2rem;
+}
+
+/* Logo styling */
+.logo-container {
+  margin-bottom: 2rem;
+}
+
+.logo-image,
+.card-logo {
+  max-height: 80px;
+  width: auto;
+}
+
+/* Titoli e testi */
+.card-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.card-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Form controls massicci */
+.form-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-control {
+  padding: 1.2rem 1.5rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius);
+  background: var(--white);
+  transition: var(--transition);
+  margin-bottom: 1.5rem;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(74, 154, 161, 0.1);
+  outline: none;
+}
+
+/* Bottoni massicci */
+.btn-primary,
+.btn-login,
+.btn-process {
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: var(--radius);
+  border: none;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-primary:hover,
+.btn-login:hover,
+.btn-process:hover {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(74, 154, 161, 0.3);
+}
+
+/* Language switcher pulito */
+.language-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.language-switcher .dropdown-toggle {
+  background: var(--white);
+  border: 2px solid var(--border-light);
+  color: var(--primary);
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.language-switcher .dropdown-toggle:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.language-switcher .dropdown-menu {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 0.5rem;
+}
+
+/* Feature cards */
+.feature-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  border: 2px solid var(--border-light);
+  transition: var(--transition);
+  height: 100%;
+  margin-bottom: 2rem;
+}
+
+.feature-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.feature-card i {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Navbar pulita */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Alert styling */
+.alert {
+  border-radius: var(--radius);
+  border: none;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+}
+
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.alert-danger {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Progress bar */
+.progress {
+  height: 30px;
+  border-radius: var(--radius);
+  background: var(--light-gray);
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.progress-bar {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  transition: width 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .card-header,
+  .card-body {
+    padding: 2rem 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 2rem;
+  }
+  
+  .logo-image,
+  .card-logo {
+    max-height: 60px;
+  }
+}
+
+/* Animazioni */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-card,
+.main-card {
+  animation: slideUp 0.6s ease-out;
+}
+
+/* Privacy e footer */
+.privacy-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.privacy-content h2 {
+  color: var(--primary);
+  margin: 2rem 0 1rem 0;
+}
+
+.privacy-content p {
+  margin-bottom: 1rem;
+}
+
+/* How it works card */
+.how-it-works {
+  background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+  border: 2px solid rgba(74, 154, 161, 0.2);
+  margin-bottom: 2rem;
+}
+
+.how-it-works .card-header {
+  background: rgba(74, 154, 161, 0.1);
+  border-bottom: 1px solid rgba(74, 154, 161, 0.2);
+}
+
+.how-it-works h4 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}

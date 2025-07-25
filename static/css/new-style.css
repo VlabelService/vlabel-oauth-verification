@@ -1,0 +1,287 @@
+/* VLabel - Design Moderno e Pulito */
+
+:root {
+  --primary: #4A9AA1;
+  --primary-dark: #3E8389;
+  --primary-light: #5CB3BA;
+  --primary-lighter: #7BC5CC;
+  --primary-pale: #E8F4F5;
+  --secondary: #6C757D;
+  --success: #198754;
+  --danger: #DC3545;
+  --warning: #FFC107;
+  --info: #0DCAF0;
+  --light: #F8F9FA;
+  --dark: #212529;
+  --white: #FFFFFF;
+  --gradient-primary: linear-gradient(135deg, #4A9AA1 0%, #5CB3BA 100%);
+  --gradient-card: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+  --gradient-button: linear-gradient(135deg, #4A9AA1 0%, #5CB3BA 50%, #7BC5CC 100%);
+  --shadow: 0 10px 25px rgba(74, 154, 161, 0.15);
+  --shadow-lg: 0 20px 40px rgba(74, 154, 161, 0.2);
+  --border-radius: 16px;
+  --border-radius-lg: 20px;
+  --border-radius-xl: 24px;
+}
+
+/* Reset e Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #f0f9ff 100%);
+  min-height: 100vh;
+}
+
+/* Dashboard Page */
+.dashboard-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #f0f9ff 100%);
+}
+
+/* Navbar */
+.navbar {
+  background: var(--gradient-button) !important;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(15px);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: white !important;
+}
+
+/* Main Card */
+.main-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: none;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  margin: 2rem 0;
+}
+
+/* Header Dashboard - PIATTO come vuoi tu */
+.dashboard-header {
+  background: rgba(248, 249, 250, 0.9) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border-radius: 0 !important;
+  padding: 2.5rem 2rem !important;
+  border-bottom: 1px solid rgba(233, 236, 239, 0.5) !important;
+  text-align: center;
+}
+
+/* Card Body */
+.card-body {
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Pulsanti - ROTONDI come vuoi tu */
+.btn {
+  border-radius: var(--border-radius) !important;
+  padding: 12px 24px;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(74, 154, 161, 0.2);
+}
+
+.btn-primary {
+  background: var(--gradient-button);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 154, 161, 0.3);
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Form Elements - ROTONDI */
+.form-control {
+  border-radius: var(--border-radius) !important;
+  border: 2px solid #e9ecef;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(74, 154, 161, 0.25);
+}
+
+/* Logo */
+.card-logo {
+  height: 90px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+/* Logo per landing page - dimensione normale */
+.logo-image {
+  height: 120px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+/* Logo ridotto per le card */
+.small-logo {
+  height: 60px;
+  width: auto;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  color: var(--secondary);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Sezioni */
+.form-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.section-title {
+  color: var(--dark);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.section-title i {
+  color: var(--primary);
+  margin-right: 0.5rem;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Help Card - ROTONDA */
+.help-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow);
+  border: none;
+  backdrop-filter: blur(20px);
+}
+
+.help-card .card-body {
+  padding: 2rem;
+}
+
+/* Language Switcher - ROTONDO */
+.language-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+}
+
+.language-switcher .dropdown-toggle {
+  border-radius: 25px !important;
+  padding: 12px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(74, 154, 161, 0.2);
+  color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+.language-switcher .dropdown-menu {
+  border-radius: var(--border-radius-lg) !important;
+  border: none;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Landing Page Cards - ROTONDE */
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: none;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  margin: 1rem 0;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(74, 154, 161, 0.25);
+}
+
+/* Animazioni */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-card, .help-card, .login-card {
+  animation: slideUp 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .card-body {
+    padding: 2rem 1.5rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-page">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <i class="fas fa-shipping-fast me-2"></i>
+                VLabel
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="{{ url_for('index') }}">
+                    <i class="fas fa-home me-1"></i>
+                    Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Privacy Policy Card -->
+                <div class="main-card">
+                    <div class="card-header">
+                        <h1 class="card-title">
+                            <i class="fas fa-shield-alt me-2"></i>
+                            Privacy Policy e Termini di Servizio
+                        </h1>
+                        <p class="card-subtitle">La tua privacy è la nostra priorità</p>
+                    </div>
+                    
+                    <div class="card-body">
+                        <!-- Privacy Policy -->
+                        <div class="privacy-section">
+                            <h3 class="section-title">
+                                <i class="fas fa-user-shield me-2"></i>
+                                Informativa sulla Privacy
+                            </h3>
+                            
+                            <div class="privacy-content">
+                                <h4>Raccolta e Utilizzo dei Dati</h4>
+                                <ul>
+                                    <li><strong>Dati Gmail:</strong> Utilizziamo le tue credenziali Gmail esclusivamente per accedere alle email Vinted e scaricare le etichette di spedizione. Le credenziali vengono utilizzate solo durante la sessione attiva e non vengono mai salvate sui nostri server.</li>
+                                    <li><strong>Email:</strong> Accediamo solo alle email di Vinted contenenti etichette di spedizione. Non leggiamo, salviamo o condividiamo altre email.</li>
+                                    <li><strong>Etichette:</strong> Le etichette PDF vengono elaborate temporaneamente per la formattazione e immediatamente eliminate dopo il download.</li>
+                                </ul>
+
+                                <h4>Cosa NON Facciamo</h4>
+                                <div class="alert alert-success">
+                                    <i class="fas fa-check-circle me-2"></i>
+                                    <strong>Garanzie di Privacy:</strong>
+                                    <ul class="mb-0">
+                                        <li>Non salviamo le tue credenziali Gmail</li>
+                                        <li>Non conserviamo copie delle tue email</li>
+                                        <li>Non condividiamo i tuoi dati con terze parti</li>
+                                        <li>Non utilizziamo i tuoi dati per pubblicità</li>
+                                        <li>Non accediamo ad altre email oltre a quelle di Vinted</li>
+                                    </ul>
+                                </div>
+
+                                <h4>Sicurezza</h4>
+                                <ul>
+                                    <li>Tutte le connessioni sono protette da crittografia HTTPS</li>
+                                    <li>I dati vengono elaborati esclusivamente in memoria e non salvati su disco</li>
+                                    <li>Le sessioni scadono automaticamente per garantire la sicurezza</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Terms of Service -->
+                        <div class="privacy-section">
+                            <h3 class="section-title">
+                                <i class="fas fa-file-contract me-2"></i>
+                                Termini di Servizio
+                            </h3>
+                            
+                            <div class="privacy-content">
+                                <h4>Utilizzo del Servizio</h4>
+                                <ul>
+                                    <li>VLabel è destinato esclusivamente all'elaborazione di etichette Vinted legittime</li>
+                                    <li>È vietato utilizzare il servizio per scopi illegali o non autorizzati</li>
+                                    <li>L'utente è responsabile della sicurezza delle proprie credenziali Gmail</li>
+                                </ul>
+
+                                <h4>Limitazioni</h4>
+                                <ul>
+                                    <li>Il servizio è fornito "così com'è" senza garanzie esplicite</li>
+                                    <li>Non siamo responsabili per eventuali problemi con le etichette elaborate</li>
+                                    <li>Il servizio può essere temporaneamente non disponibile per manutenzione</li>
+                                </ul>
+
+                                <h4>Password per App Gmail</h4>
+                                <div class="alert alert-info">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    <strong>Importante:</strong> È necessario utilizzare una "Password per App" di Gmail, non la password principale del tuo account. Questo garantisce maggiore sicurezza e funzionalità.
+                                    <br><br>
+                                    <a href="https://support.google.com/accounts/answer/185833" target="_blank" class="btn btn-sm btn-outline-info">
+                                        <i class="fas fa-external-link-alt me-1"></i>
+                                        Guida Google: Come creare una Password per App
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="privacy-section">
+                            <h3 class="section-title">
+                                <i class="fas fa-envelope me-2"></i>
+                                Contatti
+                            </h3>
+                            
+                            <div class="privacy-content">
+                                <p>Per domande su questa informativa sulla privacy o sui termini di servizio, contattaci attraverso i canali ufficiali di supporto.</p>
+                                
+                                <div class="alert alert-primary">
+                                    <i class="fas fa-calendar-alt me-2"></i>
+                                    <strong>Ultimo aggiornamento:</strong> 23 Luglio 2025
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Back Button -->
+                        <div class="text-center mt-4">
+                            <a href="{{ url_for('index') }}" class="btn btn-primary">
+                                <i class="fas fa-arrow-left me-2"></i>
+                                Torna alla Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

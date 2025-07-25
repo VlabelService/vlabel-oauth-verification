@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="landing-page">
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="row justify-content-center align-items-center min-vh-100">
+                <div class="col-lg-6 col-md-8 col-sm-10">
+                    <div class="login-card">
+                        <div class="card-header text-center">
+                            <div class="logo-container">
+                                <img src="{{ url_for('static', filename='images/vlabel_logo.png') }}?v=2025073028" alt="VLabel" class="logo-image">
+                            </div>
+                            <p class="brand-subtitle">{{ get_text('brand_subtitle', lang) }}</p>
+                        </div>
+                        
+                        <div class="card-body">
+                            {% with messages = get_flashed_messages(with_categories=true) %}
+                                {% if messages %}
+                                    {% for category, message in messages %}
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <i class="fas fa-exclamation-triangle me-2"></i>
+                                            {{ message }}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                            
+                            <form method="POST" action="{{ url_for('login') }}" class="login-form">
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">
+                                        <i class="fas fa-lock me-2"></i>Password di Accesso
+                                    </label>
+                                    <input type="password" class="form-control" id="password" name="password" required placeholder="{{ get_text('password_placeholder', lang) }}" autocomplete="current-password">
+                                </div>
+                                
+                                <button type="submit" class="btn btn-login w-100">
+                                    <i class="fas fa-sign-in-alt me-2"></i>
+                                    {{ get_text('login_button', lang) }}
+                                </button>
+                            </form>
+                            
+                            <!-- Privacy Link -->
+                            <div class="text-center mt-3">
+                                <div class="privacy-link">
+                                    <i class="fas fa-shield-alt me-1"></i>
+                                    <a href="{{ url_for('privacy') }}" class="privacy-link-text">
+                                        Privacy Policy e Termini di Servizio
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Features -->
+                    <div class="features-section">
+                        <div class="row text-center h-100">
+                            <div class="col-lg-6 col-12 d-flex mb-4">
+                                <div class="feature-item">
+                                    <div class="feature-emoji">📩</div>
+                                    <h4 class="feature-title">{{ get_text('feature1_title', lang) }}</h4>
+                                    <p class="feature-description">{{ get_text('feature1_desc', lang) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 d-flex mb-4">
+                                <div class="feature-item">
+                                    <div class="feature-emoji">🧠</div>
+                                    <h4 class="feature-title">{{ get_text('feature2_title', lang) }}</h4>
+                                    <p class="feature-description">{{ get_text('feature2_desc', lang) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-12 d-flex mb-4">
+                                <div class="feature-item">
+                                    <div class="feature-emoji">✂️</div>
+                                    <h4 class="feature-title">{{ get_text('feature3_title', lang) }}</h4>
+                                    <p class="feature-description">{{ get_text('feature3_desc', lang) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-12 d-flex mb-4">
+                                <div class="feature-item">
+                                    <div class="feature-emoji">🖊️</div>
+                                    <h4 class="feature-title">{{ get_text('feature4_title', lang) }}</h4>
+                                    <p class="feature-description">{{ get_text('feature4_desc', lang) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-12 d-flex mb-4">
+                                <div class="feature-item">
+                                    <div class="feature-emoji">📦</div>
+                                    <h4 class="feature-title">{{ get_text('feature5_title', lang) }}</h4>
+                                    <p class="feature-description">{{ get_text('feature5_desc', lang) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Strip -->
+    <div class="footer-strip">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="footer-text">
+                        <i class="fas fa-copyright me-1"></i>
+                        VLabel 2025
+                    </div>
+                    <div class="mt-2">
+                        <div class="privacy-link">
+                            <a href="{{ url_for('privacy') }}" class="privacy-link-text me-3">
+                                <i class="fas fa-shield-alt me-1"></i>Privacy Policy
+                            </a>
+                            <a href="{{ url_for('terms') }}" class="privacy-link-text">
+                                <i class="fas fa-file-contract me-1"></i>Terms of Service
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

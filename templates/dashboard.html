@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-page">
+    <!-- Header Navbar -->
+    <div class="dashboard-header">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex flex-column align-items-start">
+                    <h4 class="dashboard-title mb-0">{{ get_text('dashboard_title', lang) }}</h4>
+                    <a href="{{ url_for('logout') }}" class="logout-link">
+                        <i class="fas fa-sign-out-alt me-1"></i>
+                        {{ get_text('logout', lang) }}
+                    </a>
+                </div>
+                
+                <!-- Language Switcher in Navbar -->
+                <div class="navbar-language-switcher-small">
+                    <div class="dropdown">
+                        <button class="btn btn-sm dropdown-toggle" type="button" id="navLanguageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            {% for code, name in languages.items() %}
+                                {% if code == lang %}{{ name }}{% endif %}
+                            {% endfor %}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="navLanguageDropdown">
+                            {% for code, name in languages.items() %}
+                            <li><a class="dropdown-item {% if code == lang %}active{% endif %}" href="{{ url_for('set_language', lang=code) }}">{{ name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Main Card -->
+                <div class="main-card">
+                    <div class="card-body">
+                        <form id="labelForm" class="label-form">
+
+                            
+                            <!-- Email Configuration -->
+                            <div class="form-section" id="emailSection">
+                                <h5 class="section-title">
+                                    <i class="fas fa-envelope me-2"></i>
+                                    {{ get_text('access_data', lang) }}
+                                </h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="email" class="form-label">{{ get_text('email_field_label', lang) }}</label>
+                                            <input type="email" class="form-control" id="email" name="email" required placeholder="{{ get_text('email_placeholder', lang) }}">
+                                            <div class="form-text">{{ get_text('email_help_text', lang) }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="password" class="form-label">{{ get_text('password_field_label', lang) }}</label>
+                                            <input type="password" class="form-control" id="password" name="password" required>
+                                            <div class="form-text">
+                                                {{ get_text('password_help_text', lang) }}
+                                                <a href="https://myaccount.google.com/apppasswords" target="_blank" class="text-muted">
+                                                    {{ get_text('temp_password_link', lang) }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Time Range -->
+                            <div class="form-section">
+                                <h5 class="section-title">
+                                    <i class="fas fa-calendar-alt me-2"></i>
+                                    {{ get_text('days_label', lang) }}
+                                </h5>
+                                
+                                <div class="form-group">
+                                    <label for="days" class="form-label">
+                                        {{ get_text('days_label', lang) }}: <span id="daysValue">3</span>
+                                    </label>
+                                    <input type="range" class="form-range" id="days" name="days" min="1" max="5" value="3">
+                                    <div class="d-flex justify-content-between text-muted small">
+                                        <span>{{ get_text('one_day', lang) }}</span>
+                                        <span>{{ get_text('five_days', lang) }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Actions -->
+                            <div class="form-section">
+                                <div class="action-buttons">
+                                    <button type="button" class="btn btn-outline-primary" id="checkBtn">
+                                        <i class="fas fa-search me-2"></i>
+                                        {{ get_text('process_button', lang) }}
+                                    </button>
+                                    <button type="submit" class="btn btn-primary" id="downloadBtn" disabled>
+                                        <i class="fas fa-download me-2"></i>
+                                        {{ get_text('download_button', lang) }}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <!-- Results Section -->
+                        <div id="resultsSection" class="results-section" style="display: none;">
+                            <div class="results-header">
+                                <h5 class="section-title mb-0">
+                                    <i class="fas fa-list me-2"></i>
+                                    {{ get_text('labels_found', lang) }}
+                                    <span class="badge bg-success ms-2" id="labelCount">0</span>
+                                </h5>
+                            </div>
+                            <div id="labelsList" class="labels-list"></div>
+                        </div>
+                        
+                        <!-- Progress Section -->
+                        <div id="progressSection" class="progress-section" style="display: none;">
+                            <div class="progress-header">
+                                <h5 class="section-title">
+                                    <i class="fas fa-spinner fa-spin me-2"></i>
+                                    {{ get_text('processing_in_progress', lang) }}
+                                </h5>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                     role="progressbar" style="width: 0%"></div>
+                            </div>
+                            <div class="progress-text mt-2">
+                                <small class="text-muted">{{ get_text('download_preparation', lang) }}</small>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- How It Works Card -->
+                <div class="help-card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">
+                            <i class="fas fa-info-circle me-2"></i>
+                            {{ get_text('how_it_works', lang) }}
+                        </h5>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-check-circle text-success me-2"></i>{{ get_text('requirements', lang) }}:</h6>
+                                <ul class="help-list mb-3">
+                                    <li><strong>{{ get_text('gmail_requirements', lang) }}</strong></li>
+                                    <li><strong>{{ get_text('app_password_requirement', lang) }}</strong></li>
+                                    <li><strong>{{ get_text('at_least_one_label', lang) }}</strong></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-play-circle text-primary me-2"></i>{{ get_text('how_to_use', lang) }}:</h6>
+                                <ul class="help-list mb-3">
+                                    <li>{{ get_text('insert_gmail_credentials', lang) }}</li>
+                                    <li>{{ get_text('select_days_range', lang) }}</li>
+                                    <li>{{ get_text('verify_available_labels', lang) }}</li>
+                                    <li>{{ get_text('download_formatted_zip', lang) }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+                
+                <!-- Privacy and Logout Section -->
+                <div class="text-center mt-4">
+                    <small class="text-muted">
+                        <a href="{{ url_for('privacy') }}" class="text-decoration-none me-3">
+                            <i class="fas fa-shield-alt me-1"></i>
+                            Privacy Policy
+                        </a>
+                        <a href="{{ url_for('terms') }}" class="text-decoration-none me-3">
+                            <i class="fas fa-file-contract me-1"></i>
+                            Terms of Service
+                        </a>
+                    </small>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

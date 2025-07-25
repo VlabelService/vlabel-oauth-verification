@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block title %}Privacy Policy - VLabel{% endblock %}
+
+{% block content %}
+<div class="privacy-page">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0" style="border-radius: 20px;">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-5">
+                            <img src="{{ url_for('static', filename='images/vlabel_logo.png') }}" alt="VLabel" style="height: 55px; margin-bottom: 20px;">
+                            <h1 class="h2 mb-2" style="color: #4A9AA1; font-weight: 600;">Privacy Policy</h1>
+                            <p class="text-muted">Last updated: July 24, 2025</p>
+                        </div>
+
+                        <div class="privacy-content">
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-info-circle me-2"></i>Overview
+                                </h3>
+                            <p>VLabel ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our Vinted shipping label processing service.</p>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-database me-2"></i>Information We Collect
+                                </h3>
+                            <h4 class="h5">Gmail Access</h4>
+                            <ul>
+                                <li><strong>Email Content:</strong> We access your Gmail account solely to retrieve Vinted shipping labels from emails</li>
+                                <li><strong>PDF Attachments:</strong> We process only PDF attachments containing shipping labels</li>
+                                <li><strong>Email Metadata:</strong> Basic email information (sender, date, subject) to identify Vinted messages</li>
+                            </ul>
+                            
+                            <h4 class="h5">Authentication Data</h4>
+                            <ul>
+                                <li><strong>OAuth Tokens:</strong> Secure tokens to access your Gmail account (when using Google login)</li>
+                                <li><strong>App Passwords:</strong> Encrypted storage of Gmail app-specific passwords (when using manual login)</li>
+                                <li><strong>Session Data:</strong> Temporary session information for app functionality</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-tools me-2"></i>How We Use Your Information
+                                </h3>
+                            <ul>
+                                <li><strong>Label Processing:</strong> Extract and format shipping labels from your Vinted emails</li>
+                                <li><strong>Service Delivery:</strong> Generate downloadable ZIP files with processed labels</li>
+                                <li><strong>Authentication:</strong> Verify your identity and maintain secure access</li>
+                                <li><strong>Service Improvement:</strong> Analyze usage patterns to enhance functionality</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-shield-alt me-2"></i>Data Security & Technical Guarantees
+                                </h3>
+                            <h5 class="h6 mt-3 mb-2">Security Implementation:</h5>
+                            <ul>
+                                <li><strong>Read-Only Access:</strong> VLabel uses only 'gmail.readonly' scope - cannot modify, delete, or send emails</li>
+                                <li><strong>Filtered Access:</strong> Accesses only emails from official Vinted domains (vinted.com, vinted.it, etc.)</li>
+                                <li><strong>Temporary Processing:</strong> Email content processed in memory only, never stored permanently</li>
+                                <li><strong>PDF-Only Processing:</strong> Extracts only PDF attachments, ignores all email text content</li>
+                                <li><strong>HTTPS Encryption:</strong> All data transmissions use secure HTTPS encryption</li>
+                                <li><strong>Automatic Cleanup:</strong> Temporary files deleted immediately after processing</li>
+                            </ul>
+                            
+                            <h5 class="h6 mt-3 mb-2">What VLabel CANNOT Access:</h5>
+                            <ul class="text-muted">
+                                <li>Personal email content or text</li>
+                                <li>Emails from non-Vinted senders</li>
+                                <li>Contact lists or address books</li>
+                                <li>Other Google services (Drive, Calendar, etc.)</li>
+                                <li>Ability to send, modify, or delete emails</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-clock me-2"></i>Data Retention
+                                </h3>
+                            <ul>
+                                <li><strong>Email Content:</strong> Not stored permanently; processed in real-time only</li>
+                                <li><strong>Processed Labels:</strong> Temporary files deleted after download</li>
+                                <li><strong>Authentication Data:</strong> Stored securely for service functionality</li>
+                                <li><strong>Session Data:</strong> Automatically expires after 4 days</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-link me-2"></i>Third-Party Services
+                                </h3>
+                            <ul>
+                                <li><strong>Google Gmail API:</strong> Used to access your Gmail account with your explicit consent</li>
+                                <li><strong>Google OAuth:</strong> Secure authentication service provided by Google</li>
+                                <li><strong>Replit Hosting:</strong> Cloud hosting platform for service delivery</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-user-check me-2"></i>Your Rights
+                                </h3>
+                            <ul>
+                                <li><strong>Access Control:</strong> You can revoke Gmail access at any time</li>
+                                <li><strong>Data Deletion:</strong> Request deletion of your authentication data</li>
+                                <li><strong>Transparency:</strong> Full visibility into what data we access and process</li>
+                                <li><strong>Opt-Out:</strong> Discontinue service usage at any time</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-gavel me-2"></i>Compliance & Verification
+                                </h3>
+                            <p>VLabel fully complies with:</p>
+                            <ul>
+                                <li><strong>GDPR:</strong> European Union General Data Protection Regulation</li>
+                                <li><strong>Google API Services:</strong> Google's User Data Policy and security requirements</li>
+                                <li><strong>OAuth 2.0 Standards:</strong> Secure authentication protocols with PKCE protection</li>
+                                <li><strong>Data Minimization:</strong> Processes only data strictly necessary for label formatting</li>
+                                <li><strong>Industry Standards:</strong> Best practices for data security and privacy protection</li>
+                            </ul>
+                            
+                            <div class="alert alert-info mt-3">
+                                <h6><i class="fas fa-certificate me-2"></i>Google Verification Status</h6>
+                                <p class="mb-0">VLabel is designed for Google OAuth verification with comprehensive security documentation, transparent data handling, and minimal access requirements.</p>
+                            </div>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-envelope me-2"></i>Contact Information
+                                </h3>
+                            <p>For privacy-related questions or concerns, please contact us:</p>
+                            <ul>
+                                <li><strong>Email:</strong> privacy@vlabel.app</li>
+                                <li><strong>Response Time:</strong> Within 48 hours</li>
+                                <li><strong>Data Protection Officer:</strong> Available upon request</li>
+                            </ul>
+                        </section>
+
+                            <section class="mb-5">
+                                <h3 class="h4 mb-3" style="color: #4A9AA1; border-bottom: 2px solid #4A9AA1; padding-bottom: 10px;">
+                                    <i class="fas fa-sync-alt me-2"></i>Policy Updates
+                                </h3>
+                            <p>We may update this Privacy Policy periodically. Changes will be posted on this page with an updated "Last modified" date. Continued use of VLabel after changes constitutes acceptance of the updated policy.</p>
+                        </section>
+                    </div>
+
+                        <div class="text-center mt-5">
+                            <a href="{{ url_for('index') }}" class="btn btn-lg" style="background-color: #4A9AA1; border-color: #4A9AA1; color: white; border-radius: 25px; padding: 12px 30px; font-weight: 500;">
+                                <i class="fas fa-arrow-left me-2"></i>Back to VLabel
+                            </a>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
